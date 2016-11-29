@@ -25,3 +25,14 @@ AddressBook.prototype.getInitialContacts = function(cb) { // Fake async callback
     }
   }, 3);
 }
+
+AddressBook.prototype.promiseIC = function() {
+  return new Promise(function(resolve, reject) {
+    setTimeout(() => {
+      var first = new Contact("Jordan");
+      this.contacts = [first];
+      console.log(this.contacts);
+      resolve(first);
+    }, 3);
+  })
+}

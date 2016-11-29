@@ -37,3 +37,15 @@ describe("Async Address Book", function() {
     done();
   });
 });
+
+describe("Promisify Address Book", function() {
+  var ab = new AddressBook();
+
+  it("should grab an initial contact named after you", function(done) {
+    var c = new Contact("Jordan");
+    ab.promiseIC().then(function(result) {
+      expect(result).toEqual(c);
+      done();
+    })
+  });
+})
