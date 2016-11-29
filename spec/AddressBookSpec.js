@@ -21,7 +21,7 @@ describe( "AddressBook", function() {
   });
 });
 
-describe("Async Address Book", function() {	// !!! Not sure why it fails when replacing 'Address Book' w/ 'AddressBook'
+describe("Async Address Book", function() {	
   var ab = new AddressBook();
 
   beforeEach(function(done) {
@@ -30,8 +30,10 @@ describe("Async Address Book", function() {	// !!! Not sure why it fails when re
     });
   });
 
-  it("should grab initial contacts", function(done) {
+  it("should grab an initial blank contact", function(done) {
     expect(ab.initialComplete).toBe(true);
+    var c = new Contact();
+    expect(ab.getContact(0)).toEqual(c);
     done();
   });
 });

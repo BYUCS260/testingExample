@@ -18,6 +18,8 @@ AddressBook.prototype.deleteContact = function(i) {
 AddressBook.prototype.getInitialContacts = function(cb) { // Fake async callback function
   setTimeout(() => {
     this.initialComplete = true;  // Set to true
+    var first = new Contact();
+    this.contacts = [first];
     if(cb) {
       return cb();
     }
