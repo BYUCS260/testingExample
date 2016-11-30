@@ -32,7 +32,11 @@ AddressBook.prototype.promiseIC = function() {
       var first = new Contact("Jordan");
       this.contacts = [first];
       console.log(this.contacts);
+      if(first.name != "") {
       resolve(first);
+      } else {
+        reject(first);
+      }
     }, 3);
   })
 }
